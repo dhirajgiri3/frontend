@@ -1,21 +1,74 @@
+/* Global Variables */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode */
+  --bg: #ffffff;
+  --primary: #333333;
+  --secondary: #6e6e6e;
+  --accent: #ff406c;
+  --accent-hover: #ff6c7e;
+  --accent-dark: #ff2369;
+  --border: #bbbbbb;
+
+  /* Font Sizes */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+
+  /* Spacing */
+  --sp-xs: 0.5rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3rem;
+
+  /* Border Radius */
+  --rad-sm: 0.125rem;
+  --rad-md: 0.25rem;
+  --rad-lg: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  /* Dark Mode */
+  --bg: #0a0a0a;
+  --primary: #ededed;
+  --secondary: #9ca3af;
+  --accent: #ff406c;
+  --accent-hover: #ff6c7e;
+  --accent-dark: #ff2369;
+  --border: #2c2c2c;
+}
+
+* {
+  transition: background-color 0.3s, color 0.3s;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.shadow {
+  box-shadow: 0 0 50px 1px rgba(58, 58, 58, 0.1);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.megamenu {
+  width: 55vw;
+  max-width: 50vw;
+}
+
+input {
+  outline: none;
+  &:focus {
+    outline: none;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
